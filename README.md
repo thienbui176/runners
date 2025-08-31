@@ -39,9 +39,6 @@ Hỗ trợ:
 | ---------------- | -------- | ----------------------------------------------------------------------- |
 | `REPO`           | ✅       | Repository theo dạng `owner/repo` (VD: `thienbui176/ExpenseManagement`) |
 | `TOKEN`          | ✅       | PAT (classic) có scope hợp lệ                                           |
-| `RUNNER_NAME`    | ❌       | Tên runner. Mặc định: `runner-<hostname>`                               |
-| `RUNNER_WORKDIR` | ❌       | Thư mục work của runner. Mặc định: `_work`                              |
-
 ---
 
 ## 🐳 3. Chạy bằng Docker
@@ -52,7 +49,10 @@ Hỗ trợ:
 docker run -d \
   -e REPO="thienbui176/ExpenseManagement" \
   -e TOKEN="ghp_xxx..." \
-  -e RUNNER_NAME="runner-1" \
   --name my-runner \
   runner-image:latest
+```
+
+```bash 
+REPO=xxx PAT=yyy docker-compose up -d 
 ```
