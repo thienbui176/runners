@@ -1,0 +1,17 @@
+services:
+  runner-linux:
+    image: runner-image:latest
+    restart: always
+    environment:
+      - REPO=${REPO}
+      - TOKEN=${PAT}
+    deploy:
+      mode: replicated
+      replicas: 4
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 300M
+        reservations:
+          cpus: '0.3'
+          memory: 128M
